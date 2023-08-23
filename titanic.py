@@ -1,5 +1,7 @@
 import csv
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 x1 = []
 
 #manipular un archivo, sep para las separaciones de las celdas
@@ -18,7 +20,7 @@ titan = pd.read_csv("titanic.csv",sep=";")
 #print(titan.index)
 
 #setear un indice
-#titan.set_index(titan["PassengerId"], inplace=True)
+titan.set_index(titan["PassengerId"], inplace=True)
 
 #iloc sirve para buscar por el indice original, osea apartir del 0
 #loc sirve para trabajar con el indice antes seteado
@@ -27,7 +29,7 @@ titan = pd.read_csv("titanic.csv",sep=";")
 #print(titan.loc[355,["Name","Age"]])
 
 
-#*****titan[titan["PassengerId"],]
+#print(titan[titan["PassengerId"]%3==0])
 #print(titan.sort_values(by=["Name"],ascending=True))
 #print(titan.sort_values(by=["Name"],ascending=True).loc[:,["Name","Age"]])
 
@@ -36,5 +38,21 @@ titan = pd.read_csv("titanic.csv",sep=";")
 #################
 #encuentre la cantidad de sobrevivientes de la clase 1
 
-total = titan.apply(lambda x: (x["Pclass"] == 1)&(x["Survived"]), axis=1).sum()
-print(total)
+#total = titan.apply(lambda x: (x["Pclass"] == 1)&(x["Survived"]), axis=1).sum()
+#print(total)
+
+#age_filter = titan[titan["Age"].notna()]                       #filtro de pasajeros con edad N/A
+#print(age_filter)
+
+#age_filter["adulto"] = np.where(age_filter["Age"] >= 18,1,0)   #filtro de mayores de edad
+#print(age_filter["adulto"])
+
+#matplotlib
+
+x = np.linspace(0,7,500)    #dominio
+y = np.sin(x)               #funcion
+plt.figure(figsize=(6,8))
+plt.axhline(0,color = "black")
+plt.axvline(0,color = "black")
+plt.plot(x,y)
+plt.show()
