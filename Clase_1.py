@@ -1,4 +1,4 @@
-#clase 1, 11-08, repaso de pyhton con estadistica descriptiva
+#clase 1, 11-08, repaso de pyhton con estadistica descriptiva en numpy
 import numpy as np
 import statistics as stats
 
