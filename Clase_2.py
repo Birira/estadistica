@@ -5,7 +5,6 @@ import csv
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-x1 = []
 
 #manipular un archivo, sep para las separaciones de las celdas
 titan = pd.read_csv("titanic.csv",sep=";")
