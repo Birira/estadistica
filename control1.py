@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import statistics as stats
 
+#uso de advertising.csv
 data = pd.read_csv("Advertising.csv",sep = ",")
 
 prom_np = np.mean(data["TV"])
